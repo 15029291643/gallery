@@ -14,7 +14,7 @@ public class RetrofitUtils {
             synchronized (RetrofitUtils.class) {
                 if (retrofit == null) {
                     retrofit = new Retrofit.Builder()
-                            .baseUrl("https://pixabay.com/")
+                            .baseUrl(ConstantUtils.BASE_URL)
                             .addConverterFactory(GsonConverterFactory.create())
                             .build();
                 }
