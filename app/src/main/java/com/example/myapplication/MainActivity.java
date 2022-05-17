@@ -20,13 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());*/
-        VideoUtils.getVideoList("yellow+flowers", new VideoListCallback() {
-            @Override
-            public void onResponse(List<Video.Hit> videoList) {
-                Log.e(TAG, "onResponse: " + videoList);
-            }
-        });
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }
