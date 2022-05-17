@@ -1,8 +1,8 @@
 package com.example.myapplication.logic.network.util;
 
 
-import com.example.myapplication.logic.model.Image;
 
+import com.example.myapplication.logic.model.Image;
 
 import com.example.myapplication.logic.network.callback.ImageListCallback;
 import com.example.myapplication.logic.network.service.ImageService;
@@ -19,7 +19,7 @@ public class ImageUtils {
 
     private static ImageService getService() {
         if (service == null) {
-            synchronized (ImageService.class) {
+            synchronized (ImageUtils.class) {
                 if (service == null) {
                     service = RetrofitUtils.getInstance().create(ImageService.class);
                 }

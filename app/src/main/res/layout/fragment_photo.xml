@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.photo.PhotoFragment">
+    tools:context=".ui.image.photo.PhotoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/photoView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

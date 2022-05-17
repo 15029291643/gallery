@@ -1,8 +1,8 @@
-package com.example.myapplication.ui.gallery;
+package com.example.myapplication.ui.image.gallery;
 
 
 import com.example.myapplication.R;
-import com.example.myapplication.logic.model.Image;
+
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import com.example.myapplication.logic.model.Image;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -38,10 +38,12 @@ public class GalleryFragment extends Fragment {
         adapter = new GalleryAdapter();
         binding.recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         binding.recyclerView.setAdapter(adapter);
-        viewModel.setImageList();
-        viewModel.getImageList().observe(getViewLifecycleOwner(), new Observer<List<Image.Hits>>() {
+        if (viewModel.getImageList().getValue() == null) {
+            viewModel.setImageList();
+        }
+        viewModel.getImageList().observe(getViewLifecycleOwner(), new Observer<List<Image.Hit>>() {
             @Override
-            public void onChanged(List<Image.Hits> hits) {
+            public void onChanged(List<Image.Hit> hits) {
                 adapter.setImageList(hits);
                 if (binding.swipeRefreshLayout.isRefreshing()) {
                     binding.swipeRefreshLayout.setRefreshing(false);
