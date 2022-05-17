@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/videoFragment2">
+    app:startDestination="@id/playerFragment">
 
     <fragment
         android:id="@+id/galleryFragment"
@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_video" />
     <fragment
         android:id="@+id/playerFragment"
-        android:name="com.example.myapplication.PlayerFragment"
+        android:name="com.example.myapplication.ui.Video.player.PlayerFragment"
         android:label="fragment_player"
         tools:layout="@layout/fragment_player" />
 </navigation>
